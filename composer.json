@@ -1,0 +1,30 @@
+{
+    "name": "ging-dev/xvideos",
+    "type": "library",
+    "require": {
+        "fabpot/goutte": "^4.0",
+        "mck89/peast": "^1.14"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.21",
+        "vimeo/psalm": "^4.24"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "GingDev\\Xvideos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ging-dev",
+            "email": "thanh1101dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

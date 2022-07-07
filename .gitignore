@@ -1,0 +1,7 @@
+# misc
+tryit.php
+*.cache
+
+# composer
+vendor/
+composer.lock
