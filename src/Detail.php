@@ -21,7 +21,8 @@ class Detail
      * @return array{
      *  title: string,
      *  low: string,
-     *  high: string
+     *  high: string,
+     *  thumb: string
      * }
      */
     public function get(string $id)
@@ -36,10 +37,12 @@ class Detail
 
         $ast = Peast::latest($jsContent)->parse();
 
-        [$title, $low, $high,] = array_map(function (Literal $node): string {
+        [$title,,$low, $high,,$thumb] = array_map(function (Literal $node): string {
             return $node->getValue();
         }, (array) $ast->query('CallExpression > Literal')->getIterator());
 
-        return compact('title', 'low', 'high');
+        $title = html_entity_decode($title, ENT_QUOTES, 'UTF-8');
+
+        return compact('title', 'low', 'high', 'thumb');
     }
 }
